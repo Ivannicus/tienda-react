@@ -1,0 +1,8 @@
+import React from "react";
+
+const ItemDetailContainer = () => {
+    
+    return(<div>Buenas</div>)
+}
+
+export default ItemDetailContainer;
