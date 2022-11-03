@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom"
+import ItemDetail from "./ItemDetail";
 
 const productos = [
     { "id": 1, "nombre": "Cartera Rombos", "categoria": "carteras", "precio": 18000, "url": "https://i.postimg.cc/gJkV00Qq/Cartera-Cuadros-Celestes.jpg" },
@@ -29,18 +30,8 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
     let producto = productos.filter(el => el.id == id);
-    console.log(producto);
-    console.log(producto.nombre, producto.url, producto.precio);
-    return (
-        <div>
-            <nav class="detailProduct">
-                <h1>{producto[0].nombre}</h1>
-                <img src={producto[0].url} height="400"></img>
-                <h2>{producto[0].precio} CLP</h2>
-                <button>Añadir al carrito</button>
-            </nav>
-        </div>
-    )
+
+    return (<ItemDetail producto={producto}/>)
 }
 
 export default ItemDetailContainer;
