@@ -70,7 +70,7 @@ html {
 
 .detailContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     max-width: 100%;
     align-items: center;
@@ -85,7 +85,11 @@ html {
     display: flex;
     flex-direction: column;
     margin: auto;
+    margin-top: 3rem;
+    max-width: 30%;
     border:5px solid #74959a;
     background-color: #d4f4f7;
     padding: 2rem;
+    text-align: center;
+    color: #65888d;
 }

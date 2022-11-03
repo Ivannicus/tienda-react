@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     console.log(producto);
     console.log(producto.nombre, producto.url, producto.precio);
     return (
-        <div class="detailContainer">
+        <div>
             <nav class="detailProduct">
                 <h1>{producto[0].nombre}</h1>
                 <img src={producto[0].url} height="400"></img>
