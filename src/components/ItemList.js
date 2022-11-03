@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ItemDetailContainer from "./ItemDetailContainer";
 
 const ItemList = (prop) => {
-
-    console.log("/item/" + prop.productos[0].id.toString())
 
     return prop.productos.map(producto => {
         return (
