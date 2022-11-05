@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail";
+import { obtenerItemUnico } from "./Productos";
 
 const productos = [
     { "id": 1, "nombre": "Cartera Rombos", "categoria": "carteras", "precio": 18000, "url": "https://i.postimg.cc/gJkV00Qq/Cartera-Cuadros-Celestes.jpg" },
@@ -29,9 +30,17 @@ const productos = [
 const ItemDetailContainer = () => {
 
     const { id } = useParams();
-    let producto = productos.filter(el => el.id == id);
+    const [item, setItem] = useState([])
 
-    return (<ItemDetail producto={producto}/>)
+    useEffect(() => {
+        obtenerItemUnico(id)
+            .then((respuesta) => setItem(respuesta))
+            .catch((error) => console.log(error))
+    })
+    // let producto = productos.filter(el => el.id == id);
+
+    // return (<ItemDetail producto={producto} />)
+    return (item.length == 0 ? <h2>Obteniendo Item... </h2> : <ItemDetail producto={item} />)
 }
 
 export default ItemDetailContainer;

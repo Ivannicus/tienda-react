@@ -1,7 +1,3 @@
-import React, { useEffect, useState } from "react";
-import ItemList from "./ItemList";
-import { useParams } from "react-router-dom"
-import { obtenerItems, obtenerItemsFiltrados } from "./Productos";
 
 const productos = [
     { "id": 1, "nombre": "Cartera Rombos", "categoria": "carteras", "precio": 18000, "url": "https://i.postimg.cc/gJkV00Qq/Cartera-Cuadros-Celestes.jpg" },
@@ -26,30 +22,30 @@ const productos = [
     { "id": 20, "nombre": "Pisapies y Cojines", "categoria": "ropadecama", "precio": 24000, "url": "https://i.postimg.cc/j5LhX5cq/Pisapies-cama-y-cojines.jpg" }
 ]
 
-const ItemListContainer = () => {
-
-    const [items, setItems] = useState([]);
-
-    const { id } = useParams();
-
-    useEffect(() => {
-        if (!id) {
-            obtenerItems()
-                .then((respuesta) => { setItems(respuesta) })
-                .catch((error) => { console.log(error) })
-        } 
-        else {
-            obtenerItemsFiltrados(id)
-                .then((respuesta) => { setItems(respuesta) })
-                .catch((error) => console.log(error))
-        }
-    }, [id])
-
-
-    return (
-        <div class="cardContainer">
-            {items.length == 0 ? <h1>Obteniendo productos...</h1> : <ItemList productos={items} />}
-        </div>)
+export const obtenerItems = () => {
+    let pedido = new Promise((res) => {
+        setTimeout(() => {
+            res(productos)
+        }, 2000)
+    })
+    return pedido
 }
 
-export default ItemListContainer;
+export const obtenerItemsFiltrados = (id) => {
+    let pedidoFiltrado = new Promise((res) => {
+        setTimeout(() => {
+            res(productos.filter(item=> item.categoria == id))
+        }, 2000)
+    })
+    return pedidoFiltrado
+}
+
+export const obtenerItemUnico = (id) => {
+    let itemFiltrado = new Promise((res) => {
+        setTimeout(() => {
+            res(productos.filter(item=>item.id == id))
+        }, 2000)
+    })
+    return itemFiltrado
+}
+
