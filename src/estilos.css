@@ -93,3 +93,17 @@ html {
     text-align: center;
     color: #65888d;
 }
+
+.itemCount{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.botonItem{
+    padding: .5rem;
+    margin: .5rem;
+}
