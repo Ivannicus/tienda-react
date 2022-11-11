@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({buscarCantidad}) => {
 
     const [contador, setContador] = useState(1);
 
@@ -11,15 +11,14 @@ const ItemCount = () => {
     }
 
     const handleResta = () => {
-        if (contador > 0) {
+        if (contador > 1) {
             setContador(contador - 1);
         }
-
     }
 
-    const añadirCarrito = () => {
-        console.log(contador + " productos añadidos")
-    }
+    buscarCantidad(contador);
+    console.log(buscarCantidad(contador))
+
     return (
         <div>
             <nav class="itemCount">
@@ -27,7 +26,7 @@ const ItemCount = () => {
                 <p>{contador}</p>
                 <button onClick={handleResta} class="botonItem">-</button>
             </nav>
-            <button onClick={añadirCarrito}>Añadir al carrito</button>
+            
         </div>)
 }
 
