@@ -14,12 +14,12 @@ const AppProvider = ({children}) => {
         setCantidad(0);
     }
 
-    const llenarCarrito = (item) => {
-        setProductos(productos => [...productos, item]);
+    const llenarCarrito = (item, cantidad) => {
+        setProductos(productos => [...productos, [item, cantidad]]);
     }
 
     const sumarItems = (items) => {
-        setCantidad = (current => current + items)
+        setCantidad(current => current + items)
     }
 
     const valorContexto = {
@@ -30,7 +30,6 @@ const AppProvider = ({children}) => {
         sumarItems: sumarItems,
     }
 
-    // console.log(productos)
     // console.log(cantidad)
     return (
         <Provider value={valorContexto}>

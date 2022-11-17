@@ -107,3 +107,23 @@ html {
     padding: .5rem;
     margin: .5rem;
 }
+
+.cartWidget{
+    display: flex;
+    flex: row;
+    align-items: flex-end;
+}
+
+.carritoContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.cardCarrito{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+}

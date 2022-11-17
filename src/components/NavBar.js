@@ -7,12 +7,13 @@ const NavBar = () => {
         <header class="header">
             <h2><Link to="/" class="titulo">Confecciones Nexku</Link></h2>
             <nav>
-                <Link to="/category/delantales" class="links">Delantales</Link>
-                <Link to="/category/monederos" class="links">Monederos</Link>
-                <Link to="/category/carteras" class="links">Carteras</Link>
-                <Link to="/category/ropadecama" class="links">Ropa de Cama</Link>
+                <Link to="/categories/delantales" class="links">Delantales</Link>
+                <Link to="/categories/monederos" class="links">Monederos</Link>
+                <Link to="/categories/carteras" class="links">Carteras</Link>
+                <Link to="/categories/ropadecama" class="links">Ropa de Cama</Link>
             </nav>
-            <CartWidget />
+            <Link to="/cart"><CartWidget /></Link>
+            
         </header>
     )
 }
