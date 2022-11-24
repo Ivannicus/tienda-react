@@ -5,7 +5,6 @@ const ItemCount = ({añadirCarrito}) => {
 
     const [contador, setContador] = useState(1);
 
-
     const handleSuma = () => {
         setContador(contador + 1);
     }
@@ -19,8 +18,6 @@ const ItemCount = ({añadirCarrito}) => {
     const añadir = () => {
         añadirCarrito(contador)
     }
-
-    
 
     return (
         <div>

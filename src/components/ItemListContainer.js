@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom"
-import { obtenerItems, obtenerItemsFiltrados } from "./Productos";
-import { db } from "./firebase";
+import { obtenerItems } from "./Productos";
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([]);
 
     const { id } = useParams();
-
     useEffect(() => {
-        if (!id) {
-            obtenerItems()
-                .then((respuesta) => { setItems(respuesta) })
-                .catch((error) => { console.log(error) })
-        } 
-        else {
-            obtenerItemsFiltrados(id)
-                .then((respuesta) => { setItems(respuesta) })
-                .catch((error) => console.log(error))
-        }
+
+        obtenerItems(id)
+            .then((res) => {
+                const productos = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+                setItems(productos)
+            })
+            .catch((error) => { console.log(error) })
     }, [id])
 
 

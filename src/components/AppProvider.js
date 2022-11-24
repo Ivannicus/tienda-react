@@ -22,6 +22,7 @@ const AppProvider = ({children}) => {
         setCantidad(current => current + items)
     }
 
+
     const valorContexto = {
         productos: productos,
         cantidad: cantidad,
@@ -30,7 +31,6 @@ const AppProvider = ({children}) => {
         sumarItems: sumarItems,
     }
 
-    // console.log(cantidad)
     return (
         <Provider value={valorContexto}>
             {children}

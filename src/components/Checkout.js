@@ -3,11 +3,6 @@ import { Link } from "react-router-dom"
 
 const Checkout = (lista) => {
     
-    let total = 0;
-    for (let i in lista){
-        console.log(i)
-    }
-
     return (
         <div>
             <Link to={"/item/" + lista.item[0].id.toString()} class="cardCarrito">
