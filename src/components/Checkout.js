@@ -1,19 +1,32 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { contextoProductos } from "./AppProvider";
 
-const Checkout = (lista) => {
-    
+
+const Checkout = () => {
+
+    const contexto = useContext(contextoProductos);
+
+    const vaciarCarrito = () => {
+        contexto.vaciarCarrito();
+    }
     return (
-        <div>
-            <Link to={"/item/" + lista.item[0].id.toString()} class="cardCarrito">
-                <img src={lista.item[0].url} height="100"></img>
-                <h3>{lista.item[0].nombre}</h3>
-                <h4>{lista.item[0].precio} CLP</h4>
-                <h4>Cantidad: {lista.item[1]}</h4>
-                <h4>Total: {lista.item[0].precio*lista.item[1]}</h4>
-            </Link>
-        </div>
+        <form class="formulario">
+            <h2 class="tituloFormulario">Ingresa tus datos para completar tu pedido</h2>
+            <input placeholder="nombre" class="inputFormulario"></input>
+            <input placeholder="correo" type="email" class="inputFormulario"></input>
+            <div class="botonesCarrito">
+                <Link to="/checkoutconfirmation">
+                    <button class="botonItem" onClick={vaciarCarrito}>Comprar</button>
+                </Link>
+                <Link to="/cart">
+                    <button class="botonItem">Volver al Carrito</button>
+                </Link>
+            </div>
+        </form>
+
+
     )
 }
 
-export default Checkout
+export default Checkout;

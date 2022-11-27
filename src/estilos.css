@@ -131,3 +131,24 @@ html {
 .botonesCarrito{
     margin: 0 auto;
 }
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    border: solid 2px black;
+    border-radius: 2rem;
+}
+
+.tituloFormulario{
+    color:#65888d;
+    text-align: center;
+    margin: 1rem;
+}
+
+.inputFormulario{
+    margin: 1rem;
+    padding: .5rem;
+    width: 50%;
+    margin: 0 auto;
+}

@@ -1,8 +1,9 @@
 import React, { useContext } from "react"
+import { Link } from "react-router-dom";
 import { contextoProductos } from "./AppProvider";
-import Checkout from "./Checkout";
+import Cart from "./Cart";
 
-const CheckoutList = () => {
+const CartList = () => {
     let total = 0;
     const contexto = useContext(contextoProductos);
 
@@ -18,16 +19,18 @@ const CheckoutList = () => {
         <div class="carritoContainer">
             {
                 contexto.productos.map(item => {
-                    return (<Checkout item={item} />)
+                    return (<Cart item={item} />)
                 })
             }
             <nav class="botonesCarrito">
                 <h3>Valor Total de Compra: {total}</h3>
                 <button onClick={vaciarCarrito} class="botonItem">Vaciar Carrito</button>
-                <button class="botonItem">Comprar</button>
+                <Link to="/checkout">
+                    <button class="botonItem">Comprar</button>
+                </Link>
             </nav>
         </div>
     )
 }
 
-export default CheckoutList
+export default CartList

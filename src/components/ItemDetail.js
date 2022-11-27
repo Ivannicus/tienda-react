@@ -4,6 +4,8 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({producto}) => {
 
+    
+
     const contexto = useContext(contextoProductos);
 
     const añadirCarrito = (cantidad) => {
