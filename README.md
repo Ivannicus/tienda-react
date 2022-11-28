@@ -73,7 +73,10 @@ En esta sección me gustaría reconocer en primer lugar al profesor Horacio Guti
 
 ## 2. Deploy
 Se realizó un deploy de la página web en Vercel, es posible encontrarlo en el siguiente link:
+https://tienda-react-six.vercel.app/
 
+También otro deploy en Netlify:
+https://sage-pasca-4d4cf4.netlify.app/
 
 Además, en el siguiente video se muestra un ejemplo end-to-end del funcionamiento de la página web:
 https://www.youtube.com/watch?v=OsS8mNPVNXA
