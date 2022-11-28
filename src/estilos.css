@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    color: inherit;
 }
 
 html {
@@ -151,4 +153,16 @@ html {
     padding: .5rem;
     width: 50%;
     margin: 0 auto;
+}
+
+.confirmacionCheckout{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemsCheckout{
+    color:#65888d;
+    margin: 1rem;
 }

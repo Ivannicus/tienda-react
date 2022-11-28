@@ -18,6 +18,7 @@ const ItemListContainer = () => {
             .catch((error) => { console.log(error) })
     }, [id])
 
+    
 
     return (
         <div class="cardContainer">

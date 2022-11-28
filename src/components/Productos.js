@@ -1,5 +1,5 @@
 import { db } from "./firebase"
-import { collection, getDocs, query, where, getDoc, doc} from "firebase/firestore";
+import { collection, getDocs, query, where, getDoc, doc, addDoc} from "firebase/firestore";
 
 const productosCollection = collection(db, "productos")
 
@@ -20,3 +20,15 @@ export const obtenerItemUnico = (id) => {
     return consulta
 }
 
+const pedidosCollection = collection(db, "pedidos")
+
+export const añadirPedido = (pedido) => {
+    const orden = addDoc(pedidosCollection, pedido);
+    return (
+    orden
+    .then((res)=> res.id))
+}
+
+export const traerID = () => {
+    const id = doc()
+}
